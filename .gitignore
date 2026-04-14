@@ -1,0 +1,10 @@
+# Discord Bot
+.env
+*.db
+*.log
+__pycache__/
+.pytest_cache/
+.vscode/
+.idea/
+*.json
+!example_config.json
