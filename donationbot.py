@@ -496,7 +496,8 @@ async def sm_list(interaction: discord.Interaction):
     await interaction.response.defer()
     guild_data = bot.data_manager.get_guild(interaction.guild.id)
     roles = [f"<@&{rid}>" for rid in guild_data.get("managers", [])]
-    embed = discord.Embed(title="Managers", description=f"{'\n'.join(roles) if roles else 'None'}", color=discord.Color.blue())
+    desc = '\n'.join(roles) if roles else 'None'
+    embed = discord.Embed(title="Managers", description=desc, color=discord.Color.blue())
     await interaction.followup.send(embed=embed)
 
 @don_settings.command(name="remove_manager", description="Remove a role from managers")
